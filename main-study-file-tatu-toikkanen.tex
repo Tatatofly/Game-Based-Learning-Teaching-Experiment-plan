@@ -38,6 +38,15 @@
 %% The amssymb package provides various useful mathematical symbols
 \usepackage{amssymb}
 \usepackage{lipsum}
+
+\makeatletter
+\def\ps@pprintTitle{%
+    \let\@oddhead\@empty
+    \let\@evenhead\@empty
+    \def\@oddfoot{{\hspace*{\fill} \raggedright \today} }%
+    \let\@evenfoot\@oddfoot}
+\makeatother
+
 %% The amsthm package provides extended theorem environments
 %% \usepackage{amsthm}
 
@@ -51,10 +60,10 @@
 \newcommand{\msun}{$M_\odot}
 
 
-
 \begin{document}
 
 \begin{frontmatter}
+
 
 %% Title, authors and addresses
 
@@ -101,6 +110,7 @@
 
 \author{Tatu Toikkanen}
 \affiliation[first]{organization={University of Jyväskylä}}
+
 
 \begin{abstract}
 %% Text of abstract
